@@ -54,16 +54,18 @@ In VS Code:
 
 3. Select **Venv**.
 4. Select the installed Python 3.12 interpreter.
-5. If VS Code asks which dependency file to install, select:
 
-   ```text
-   requirements.txt
-   ```
 
 VS Code will create a folder named:
 
 ```text
 .venv
+```
+
+If VS Code asks which dependency file to install, select:
+
+```text
+requirements.txt
 ```
 
 The environment creation and package installation may take a few minutes.
