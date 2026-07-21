@@ -11,6 +11,7 @@
 After extraction, the folder should contain:
 
 ```text
+.gitignore
 classification_students.ipynb
 regression_students.ipynb
 exercise_data.py
