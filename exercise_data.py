@@ -114,8 +114,8 @@ def make_synthetic_ai4i(n: int = 10000, seed: int = 42) -> pd.DataFrame:
     )
 
 
-def load_ai4i(prefer_real: bool = True) -> pd.DataFrame:
-    """Load AI4I 2020, trying two public sources before the seeded fallback."""
+def load_ai4i(prefer_published: bool = True) -> pd.DataFrame:
+    """Load the published synthetic AI4I dataset, or the seeded fallback."""
     rename = {
         "Type": "type",
         "Air temperature [K]": "air_temp",
@@ -139,14 +139,13 @@ def load_ai4i(prefer_real: bool = True) -> pd.DataFrame:
         "RNF",
         "fail",
     ]
-    if prefer_real:
+    if prefer_published:
         for url in AI4I_URLS:
             try:
                 df = pd.read_csv(BytesIO(_download(url)), encoding="utf-8-sig")
                 df = df.rename(columns=rename)[columns]
-                return _with_source(df, "REAL AI4I data")
+                return _with_source(df, "PUBLISHED AI4I dataset (synthetic)")
             except Exception:
                 continue
-        print("Real AI4I downloads unavailable; using fallback.")
-    return _with_source(make_synthetic_ai4i(), "SEEDED AI4I fallback")
-
+        print("Published AI4I downloads unavailable; using fallback.")
+    return _with_source(make_synthetic_ai4i(), "SEEDED AI4I fallback (synthetic)")
