@@ -6,6 +6,7 @@ This folder contains two independent exercises. Allow about 90 minutes for each 
 - `classification_students.ipynb`: design a predictive-maintenance alarm.
 - `exercise_data.py`: dataset loaders and reproducible offline fallbacks.
 - `MODEL_GUIDE.md`: a short comparison of the model families used in the exercises.
+- `solutions/`: worked reference notebooks to consult after attempting the exercises.
 
 ## Before you start
 
@@ -38,6 +39,15 @@ If you use Google Colab, upload the notebook and `exercise_data.py` to the same 
 6. Keep the final test set untouched until the notebook explicitly opens it.
 
 The exercises are designed to assess decisions as well as code. A model score without units, a baseline, or an operational interpretation is not a complete answer.
+
+## Reference solutions
+
+Worked solutions are available in `solutions/`:
+
+- `regression_solution.ipynb`
+- `classification_solution.ipynb`
+
+Try each exercise before opening its solution. Use the reference notebooks to compare your workflow, checks, and interpretation rather than simply copying completed cells. Keep the repository structure unchanged so the solution notebooks can import `exercise_data.py` from the project root.
 
 ## Datasets
 
